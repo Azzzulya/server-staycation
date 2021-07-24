@@ -24,7 +24,22 @@ router.get('/item/show-image/:id', adminController.showImageItem);
 router.get('/item/:id', adminController.showEditItem);
 router.put('/item/:id',uploadMultiple, adminController.editItem);
 router.delete('/item/:id', adminController.deleteItem);
+
 // -------------------ITEM-------------------
+
+// -------------------FEATURE-------------------
+router.get('/item/show-detail-item/:itemId', adminController.viewDetailItem);
+router.post('/item/add/feature',upload, adminController.addFeature);
+router.put('/item/update/feature',upload, adminController.editFeature);
+router.delete('/item/:itemId/feature/:id', adminController.deleteFeature);
+// -------------------FEATURE-------------------
+
+// -------------------ACTIVITY-------------------
+router.post('/item/add/activity', upload, adminController.addActivity);
+// router.post('/item/add/feature',upload, adminController.addFeature);
+router.put('/item/update/activity',upload, adminController.editActivity);
+router.delete('/item/:itemId/activity/:id', adminController.deleteActivity);
+// -------------------ACTIVITY-------------------
 
 
 router.get('/booking', adminController.viewBooking);

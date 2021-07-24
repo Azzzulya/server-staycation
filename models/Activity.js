@@ -1,26 +1,26 @@
-const mongoose  = require("mongoose");
-const {ObjectId} = mongoose.Schema;
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema;
 
 const activitySchema = new mongoose.Schema({
-  name : {
+  name: {
     type: String,
-    required: true,
+    required: true
   },
-  type : {
+  type: {
     type: String,
-    required: true,
+    required: true
   },
-  imageUrl : {
+  imageUrl: {
     type: String,
-    required: true,
+    required: true
   },
-  isPopular : {
-    type : boolean,
+  isPopular: {
+    type: Boolean
   },
-  itemId:{
-    type:ObjectId,
-    ref:Item
+  itemId: {
+    type: ObjectId,
+    ref: 'Item'
   }
-});
+})
 
 module.exports = mongoose.model('Activity', activitySchema)

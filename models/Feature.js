@@ -1,22 +1,22 @@
-const mongoose  = require("mongoose");
-const {ObjectId} = mongoose.Schema;
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema;
 
 const featureSchema = new mongoose.Schema({
-  name : {
+  name: {
     type: String,
-    required: true,
+    required: true
   },
-  qty : {
+  qty: {
     type: Number,
-    required: true,
+    required: true
   },
-  imageUrl : {
+  imageUrl: {
     type: String,
-    required: true,
+    required: true
   },
-  itemId:{
-    type:ObjectId,
-    ref:Item
+  itemId: {
+    type: ObjectId,
+    ref: 'Item'
   }
 })
 
