@@ -8,6 +8,7 @@ const Booking = require('../models/Booking')
 const Member = require('../models/Member')
 
 module.exports = {
+  
   landingPage : async  (req, res ) => {
     try {
       const mostPicked = await Item.find()
@@ -22,7 +23,7 @@ module.exports = {
           path:'itemId', 
           select:'_id title country city isPopular imageId',
           perDocumentLimit : 4,
-          option:{ sort: { 'sumBooking': -1 }}, //descending
+          options:{ sort: { 'sumBooking': -1 }}, //descending
           populate: {
             path: 'imageId', 
             select: '_id imageUrl',
@@ -185,4 +186,5 @@ module.exports = {
 
     res.status(201).json({ message: "Success Booking", booking });
   }
+
 }
